@@ -1,7 +1,7 @@
 import os
 import subprocess
 import re
-from tqdm import tqdm
+
 
 
 
@@ -25,7 +25,7 @@ print('requirements satisfied')
 
 print('checking ping on all available worlds on runescape.com!')
 
-for i in tqdm(range(130),desc = "loading...",ascii =False,ncols=75):
+for i in range(130):
     sub = subprocess.Popen(f'ping world{i}.runescape.com -n 1 | FIND "time="',shell=True,stdout=subprocess.PIPE)
     ret = sub.stdout.read().decode()
     try:
