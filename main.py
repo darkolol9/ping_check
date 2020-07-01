@@ -1,6 +1,7 @@
 import os
 import subprocess
 import re
+from tqdm import tqdm
 
 
 class WORLD:
@@ -17,14 +18,15 @@ cur = 0
 
 print('checking ping on all available worlds on runescape.com!')
 
-for i in range(1,130):
+for i in tqdm(range(130),desc = "loading...",ascii =False,ncols=75):
     sub = subprocess.Popen(f'ping world{i}.runescape.com -n 1 | FIND "time="',shell=True,stdout=subprocess.PIPE)
     ret = sub.stdout.read().decode()
     try:
         short = ret[ret.index('time='):ret.index('time=')+10]
+        final = re.findall(r'\d+', short)
+
     except:
         pass
-    final = re.findall(r'\d+', short)
 
     try:
         cur = WORLD(i,int(final[0]))
