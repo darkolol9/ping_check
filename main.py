@@ -4,6 +4,10 @@ import re
 from tqdm import tqdm
 
 
+
+'''author - whine n dine'''
+
+
 class WORLD:
     def __init__(self,world,ping):
         self.world = world
@@ -48,7 +52,8 @@ worlds.sort(key = lambda x: x.ping)
 for world in worlds:
     world.print_()
 
-    
-input()
+##########################################
+input('press any key to continue...')
+###########################################
 
 
