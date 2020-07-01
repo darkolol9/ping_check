@@ -21,7 +21,6 @@ sub = 0
 cur = 0
 
 print('checking for requirements...')
-os.system('python3 -m pip install tqdm')
 print('requirements satisfied')
 
 print('checking ping on all available worlds on runescape.com!')
