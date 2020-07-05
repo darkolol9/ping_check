@@ -37,6 +37,7 @@ for i in range(130):
 
     try:
         cur = WORLD(i,int(final[0]))
+        print(cur.world,cur.ping)
     except:
         #print(f'world {i} does not exist')
         pass
